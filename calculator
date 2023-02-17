@@ -1,12 +1,16 @@
 package solution;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+import javax.swing.text.JTextComponent;
+import javax.swing.text.TextAction;
 
-public class Calculator
+public class Calculator extends JFrame
 {
     private JFrame frame;
     private JTextField tf1;
@@ -20,13 +24,21 @@ public class Calculator
     public Calculator()
     {
         frame = new JFrame("Calculator");
+        Color color = new Color(42, 117, 58, 100);
+        //frame.setBackground(color);
 
         JPanel main = new JPanel();
         JPanel row1 = new JPanel();
+        //row1.setBackground(color);
         JPanel row2 = new JPanel();
+       // row2.setBackground(color);
         JPanel row3 = new JPanel();
+        //row3.setBackground(color);
         JPanel row4 = new JPanel();
+       // row4.setBackground(color);
         JPanel row5 = new JPanel();
+       // row5.setBackground(color);
+
 
         row1.setLayout(new BoxLayout(row1, BoxLayout.LINE_AXIS));
         row2.setLayout(new BoxLayout(row2, BoxLayout.LINE_AXIS));
@@ -37,10 +49,15 @@ public class Calculator
         JButton b1, b2, b3, b4, b5;
 
         b1 = new JButton(" ADD ");
+        b1.setMargin(new Insets(5,5,5,5));
         b2 = new JButton(" SUB ");
+        b2.setMargin(new Insets(5,5,5,5));
         b3 = new JButton("MULT");
+        b3.setMargin(new Insets(5,5,5,5));
         b4 = new JButton(" DIV  ");
+        b4.setMargin(new Insets(5,5,5,5));
         b5 = new JButton("CLEAR");
+        b5.setMargin(new Insets(5,5,5,5));
 
         JButton a0, a1, a2, a3, a4, a5, a6, a7, a8, a9;
 
@@ -91,10 +108,12 @@ public class Calculator
         main.add(row3);
         main.add(row4);
         main.add(row5);
+        //main.setBackground(Color.red);
 
         frame.add(main, BorderLayout.PAGE_END);
 
         JPanel rp = new JPanel();
+        //rp.setBackground(color);
 
         JLabel r = new JLabel("Result =");
         r.setName("resultLabel");
@@ -103,6 +122,7 @@ public class Calculator
         frame.add(rp, BorderLayout.LINE_START);
 
         JPanel tp = new JPanel();
+        //tp.setBackground(color);
         tf1 = new JTextField(10);
         tf1.setName("leftOperand");
         tf2 = new JTextField(10);
@@ -233,15 +253,129 @@ public class Calculator
             }
         });
 
-        a0.addActionListener(new ActionListener()
+        a0.setAction(new TextAction("0")
         {
+           
             public void actionPerformed(ActionEvent e)
             {
-                
+                JTextComponent textComponent = getFocusedComponent();
+
+                if (textComponent != null)
+                    textComponent.replaceSelection(e.getActionCommand());
+            }
+        });
+        
+        a1.setAction(new TextAction("1")
+        {
+           
+            public void actionPerformed(ActionEvent e)
+            {
+                JTextComponent textComponent = getFocusedComponent();
+
+                if (textComponent != null)
+                    textComponent.replaceSelection(e.getActionCommand());
             }
         });
 
+        a2.setAction(new TextAction("2")
+        {
+           
+            public void actionPerformed(ActionEvent e)
+            {
+                JTextComponent textComponent = getFocusedComponent();
+
+                if (textComponent != null)
+                    textComponent.replaceSelection(e.getActionCommand());
+            }
+        });
+        
+        a3.setAction(new TextAction("3")
+        {
+           
+            public void actionPerformed(ActionEvent e)
+            {
+                JTextComponent textComponent = getFocusedComponent();
+
+                if (textComponent != null)
+                    textComponent.replaceSelection(e.getActionCommand());
+            }
+        });
+        
+        a4.setAction(new TextAction("4")
+        {
+           
+            public void actionPerformed(ActionEvent e)
+            {
+                JTextComponent textComponent = getFocusedComponent();
+
+                if (textComponent != null)
+                    textComponent.replaceSelection(e.getActionCommand());
+            }
+        });
+        
+        a5.setAction(new TextAction("5")
+        {
+           
+            public void actionPerformed(ActionEvent e)
+            {
+                JTextComponent textComponent = getFocusedComponent();
+
+                if (textComponent != null)
+                    textComponent.replaceSelection(e.getActionCommand());
+            }
+        });
+        
+        a6.setAction(new TextAction("6")
+        {
+           
+            public void actionPerformed(ActionEvent e)
+            {
+                JTextComponent textComponent = getFocusedComponent();
+
+                if (textComponent != null)
+                    textComponent.replaceSelection(e.getActionCommand());
+            }
+        });
+        
+        a7.setAction(new TextAction("7")
+        {
+           
+            public void actionPerformed(ActionEvent e)
+            {
+                JTextComponent textComponent = getFocusedComponent();
+
+                if (textComponent != null)
+                    textComponent.replaceSelection(e.getActionCommand());
+            }
+        });
+        
+        a8.setAction(new TextAction("8")
+        {
+           
+            public void actionPerformed(ActionEvent e)
+            {
+                JTextComponent textComponent = getFocusedComponent();
+
+                if (textComponent != null)
+                    textComponent.replaceSelection(e.getActionCommand());
+            }
+        });
+        
+        a9.setAction(new TextAction("9")
+        {
+           
+            public void actionPerformed(ActionEvent e)
+            {
+                JTextComponent textComponent = getFocusedComponent();
+
+                if (textComponent != null)
+                    textComponent.replaceSelection(e.getActionCommand());
+            }
+        });
+        
         frame.setSize(251, 250);
+        frame.pack();
+        frame.setResizable(false);
         frame.setVisible(true);
     }
 
