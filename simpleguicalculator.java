@@ -59,7 +59,7 @@ public class Calculator extends JFrame
         b5 = new JButton("CLEAR");
         b5.setMargin(new Insets(5,5,5,5));
 
-        JButton a0, a1, a2, a3, a4, a5, a6, a7, a8, a9;
+        JButton a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10;
 
         a0 = new JButton("0");
         a1 = new JButton("1");
@@ -71,6 +71,7 @@ public class Calculator extends JFrame
         a7 = new JButton("7");
         a8 = new JButton("8");
         a9 = new JButton("9");
+        a10 = new JButton(" . ");
 
         JButton sqrt, sqr;
 
@@ -97,6 +98,7 @@ public class Calculator extends JFrame
 
         row4.add(Box.createHorizontalGlue());
         row4.add(a0);
+        row4.add(a10);
         row4.add(b4);
 
         row5.add(Box.createHorizontalGlue());
@@ -362,6 +364,18 @@ public class Calculator extends JFrame
         });
         
         a9.setAction(new TextAction("9")
+        {
+           
+            public void actionPerformed(ActionEvent e)
+            {
+                JTextComponent textComponent = getFocusedComponent();
+
+                if (textComponent != null)
+                    textComponent.replaceSelection(e.getActionCommand());
+            }
+        });
+        
+        a10.setAction(new TextAction(".")
         {
            
             public void actionPerformed(ActionEvent e)
