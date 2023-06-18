@@ -1,2 +1,3 @@
-# projects
-Repository of my random projects.
+Simple GUI Calculator
+By John Waugh
+
