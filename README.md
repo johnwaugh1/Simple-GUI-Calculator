@@ -5,4 +5,4 @@ I wanted to improve on a calculator which I was tasked with making for a lab ass
 
 It works similarly to a calculator application on a phone, except when entering in your expression you would want to format it as an infix expression. You enter in your expression and it prints out the result.
 
-Possible improvements could include fixing errors surrounding the decimal button, which sometimes crashes the class which evaluates the expression.
+Possible improvements could include fixing errors surrounding the decimal button, which sometimes crashes the class which evaluates the expression. Also certain really long expression that include all of the mathematical operators seem to crash the calculator, so I will probably have to look into improving the expression evaluator to account for more cases.
