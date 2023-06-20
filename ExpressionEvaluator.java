@@ -54,7 +54,7 @@ public class ExpressionEvaluator
                     stack.push(symbol);
                 }
                 else if (symbol == '+' || symbol == '-' ||
-                         symbol == '*' || symbol == '/')
+                         symbol == 'x' || symbol == '÷')
                 {
                     while(stack.isEmpty() != true &&
                         stack.peek() != '(' && 
@@ -89,19 +89,19 @@ public class ExpressionEvaluator
     
     public boolean compareOperators(char op1, char op2)
     {
-        if(op1 == '+' && op2 == '*')
+        if(op1 == '+' && op2 == 'x')
         {
             return false;
         }
-        else if(op1 == '+' && op2 == '/')
+        else if(op1 == '+' && op2 == '÷')
         {
             return false;
         }
-        else if(op1 == '-' && op2 == '*')
+        else if(op1 == '-' && op2 == 'x')
         {
             return false;
         }
-        else if(op1 == '-' && op2 == '/')
+        else if(op1 == '-' && op2 == '÷')
         {
             return false;
         }
@@ -154,10 +154,10 @@ public class ExpressionEvaluator
                     case '-':
                         stack.push(num2 - num1);
                         break;
-                    case '*':
+                    case 'x':
                         stack.push(num2 * num1);
                         break;
-                    case '/':
+                    case '÷':
                         stack.push(num2 / num1);
                         break;
                 }
