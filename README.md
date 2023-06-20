@@ -1,5 +1,6 @@
-Simple GUI Calculator
+**Simple GUI Calculator (Work In Progress)
 By John Waugh
+**
 
 I wanted to improve on a calculator which I was tasked with making for a lab assignment in college. Features that have been added include buttons for numbers 0-9, for basic mathmatical operations, for raising numbers to the power of 2 and also taking the square root of numbers in the textfield, and a decimal button. I have also added a little color to the calculator, including gradient buttons. 
 
